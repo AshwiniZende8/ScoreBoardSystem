@@ -101,49 +101,16 @@ namespace OnlineExamSystem
                     TableCell TrophyToAddCell = e.Row.Cells[0];
                     TrophyToAddCell.Text = TrophyToAddCell.Text + " " + $"<img src='Images/Trophy.png' alt='icon'";
                 }
-
-                int maxCellValue = int.MinValue;
-                TableCell maxCell = null;
-                for (int i = 0; i < e.Row.Cells.Count - 1; i++)
+                for (int i = 0; i < e.Row.Cells.Count; i++)
                 {
                     TableCell cell = e.Row.Cells[i];
                     // Set the width for each cell based on the total number of columns
                     cell.Width = Unit.Pixel(100);
                     cell.Height = Unit.Pixel(100);
-                    int cellValue;
-                    if (int.TryParse(cell.Text, out cellValue))
-                    {
-                        if (cellValue == GetMaxValueInColumn(e.Row, i))
-                        {
-                            // Highlight the cell containing the maximum value (change the style as needed)
-                            cell.BackColor = System.Drawing.Color.Yellow; // Change the color as needed
-                                                                          // You can apply additional styling here
-                        }
-                        //    // Check if the current cell value is greater than the current max value
-                        //    if (cellValue > maxCellValue)
-                        //    {
-                        //        maxCellValue = cellValue;
-                        //        maxCell = cell;
-                        //    }
-                    }
                 }
-
-                //if (maxCell != null)
-                //{
-                //    maxCell.BackColor = System.Drawing.Color.PowderBlue; // Change the color as needed
-                //                                                    // You can apply additional styling here
-                //}
             }
-            //if (e.Row.RowType == DataControlRowType.Header)
-            //{
-            //    foreach (TableCell cell in e.Row.Cells)
-            //    {
-            //        //cell.CssClass = "equalColumnWidth";
-            //        cell.Width = 200;
-            //    }
-            //}
         }
-        private int GetMaxValueInColumn(GridViewRow row, int columnIndex)
+        private int GetMaxValueInColumn(int columnIndex)
         {
             int maxCellValue = int.MinValue;
 
@@ -161,6 +128,27 @@ namespace OnlineExamSystem
             }
 
             return maxCellValue;
+        }
+        protected void GridView2_DataBound(object sender, EventArgs e)
+        {
+            foreach (GridViewRow row in GridView2.Rows)
+            {
+                for (int i = 1; i < row.Cells.Count - 1; i++)
+                {
+                    int cellValue;
+                    if (int.TryParse(row.Cells[i].Text, out cellValue))
+                    {
+                        if (cellValue == 0)
+                        {
+                            continue;
+                        }
+                        if (cellValue == GetMaxValueInColumn(i))
+                        {
+                            row.Cells[i].CssClass = "highlight-cell";
+                        }
+                    }
+                }
+            }
         }
     }
     public static class Extension

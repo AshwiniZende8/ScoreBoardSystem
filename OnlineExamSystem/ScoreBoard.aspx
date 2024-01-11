@@ -125,6 +125,10 @@
 {
     color: white;
 }
+        .highlight-cell {
+            background-color: powderblue;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -156,7 +160,7 @@
                 <td>
                     <tr>
                         <!-- Your grid and other content here -->
-                        <asp:GridView runat="server" ID="GridView2" RowStyle-ForeColor="Black" HeaderStyle-ForeColor="#003300" HeaderStyle-Font-Size="Larger" GridLines="Both" OnRowDataBound="GridView1_RowDataBound">
+                        <asp:GridView runat="server" ID="GridView2" OnDataBound="GridView2_DataBound" RowStyle-ForeColor="Black" HeaderStyle-ForeColor="#003300" HeaderStyle-Font-Size="Larger" GridLines="Both" OnRowDataBound="GridView1_RowDataBound">
                             <RowStyle CssClass="row-with-borders" />
                             <HeaderStyle CssClass="header-with-borders" />
                         </asp:GridView>
