@@ -140,7 +140,7 @@
                 <asp:Panel ID="headerPanel1" runat="server">
                     <div id="labelHeading">
                         <p>
-                            ScoreBoard
+                            ScoreBoard 
                         </p>
                     </div>
                 </asp:Panel>
