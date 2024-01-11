@@ -88,6 +88,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\BlastBgGif.gif" />
+    <Content Include="Images\BlastBgGif1.gif" />
+    <Content Include="Images\VideoBlast.mp4" />
+    <Content Include="WinnerDisplayPage.aspx" />
     <Content Include="AddScorePage.aspx" />
     <Content Include="CSS\bootstrap.css" />
     <Content Include="EditScorePage.aspx" />
@@ -128,6 +132,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WinnerDisplayPage.aspx.cs">
+      <DependentUpon>WinnerDisplayPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WinnerDisplayPage.aspx.designer.cs">
+      <DependentUpon>WinnerDisplayPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddScorePage.aspx.cs">
       <DependentUpon>AddScorePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

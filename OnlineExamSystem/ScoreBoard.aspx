@@ -140,7 +140,7 @@
                 <asp:Panel ID="headerPanel1" runat="server">
                     <div id="labelHeading">
                         <p>
-                            ScoreBoard 
+                            ScoreBoard
                         </p>
                     </div>
                 </asp:Panel>
@@ -152,6 +152,9 @@
                     </li>
                     <li>
                         <asp:HyperLink  ID="Home" runat="server" Class="HyperLink" href="Dashboard.aspx">Dashboard</asp:HyperLink>
+                    </li>
+                    <li>
+                        <asp:HyperLink  ID="WinnerPage" runat="server" Class="HyperLink" href="WinnerDisplayPage.aspx">Winner</asp:HyperLink>
                     </li>
                 </ul>
             </div>

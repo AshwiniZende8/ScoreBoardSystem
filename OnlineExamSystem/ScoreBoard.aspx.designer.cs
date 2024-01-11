@@ -51,6 +51,15 @@ namespace OnlineExamSystem
         protected global::System.Web.UI.WebControls.HyperLink Home;
 
         /// <summary>
+        /// WinnerPage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink WinnerPage;
+
+        /// <summary>
         /// addBtn control.
         /// </summary>
         /// <remarks>
